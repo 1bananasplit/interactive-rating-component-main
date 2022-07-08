@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass';
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: hsl(216, 12%, 8%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    height: 350px;
+    width: 350px;
+    background: hsl(213, 19%, 18%);
+    border-radius: 30px;
+    padding: 25px;
+}
+.star{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: hsl(215, 16%, 21%);
+    margin-bottom: 25px;
+}
+h2{
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+p{
+    color: hsl(216, 12%, 54%);
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.choices{
+   display: flex;
+   align-items: center;
+   justify-content: space-between; 
+   margin-bottom: 25px;
+}
+.rating{
+    display: flex;
+    background: hsl(215, 16%, 21%);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: hsl(216, 12%, 54%);
+    transition-duration: .5s;
+    cursor: pointer;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 300px;
+    border-radius: 999px;
+    cursor: pointer;
+    background: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    transition-duration: .5s;
+}
+.rating:hover{
+    background: hsl(217, 12%, 63%);
+    color: hsl(0, 0%, 100%);
+}
+button:hover{
+    background: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+}
+.active{
+    background: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+}
+.active:hover{
+    background: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+}
+.unactive{
+    display: none;
+}
+.cardactive{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    z-index: -1;
+    height: 350px;
+    width: 350px;
+    background: hsl(213, 19%, 18%);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.cardactive img{
+    margin-bottom: 25px;
+}
+.cardactive div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(25, 97%, 53%);
+    font-size: 15px;
+    background: hsl(215, 16%, 21%);
+    height: 28px;
+    width: 180px;
+    border-radius: 999px;
+    margin-bottom: 30px;
+}
+.cardactive p{
+    font-size: 14px;
+    width: 320px;
+}

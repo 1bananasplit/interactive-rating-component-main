@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="card">
+      <span class="star">
+        <img src="./images/icon-star.svg" alt="">
+      </span>
+      <h2>
+        How did we do?
+      </h2>
+      <p>
+        Please let us know how we did with your
+        support request. All feedback is appreciated
+        to help us improve our offering!
+      </p>
+      <div class="choices">
+        <span  class="rating">1</span>
+        <span  class="rating">2</span>
+        <span  class="rating">3</span>
+        <span  class="rating">4</span>
+        <span  class="rating">5</span>
+      </div>
+      <button>SUBMIT</button>
+    </div>
+
+    <div class="cardactive">
+      <img src="./images/illustration-thank-you.svg" alt="">
+      <div class="select">You selected &nbsp; <span id="nb"></span>&nbsp; out of 5</div>
+      <h2>
+        Thank you
+      </h2>
+      <p>
+        We appreciate you taking the time to
+        give a rating. If you ever need more support
+        ,don't hesitate to get in touch!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.querySelector('button')
+    const rating = document.querySelectorAll('.rating')
+    const card = document.querySelector('.card')
+    const act = document.querySelector('.cardactive')
+    const choices = Array.from(rating)
+    const nmb = document.getElementById('nb')
+    
+    choices.forEach((el) => {
+      el.addEventListener('click', (click) => {
+        let clicked = choices[el.innerHTML -1]
+        let unclicked = choices.filter(ab => ab.innerHTML != el.innerHTML)
+
+        clicked.classList.toggle('active')
+        unclicked.forEach(e => {e.classList.remove('active')})
+
+        nmb.innerHTML = el.innerHTML
+        btn.addEventListener('click', ()=>{card.classList.replace('card','unactive')})
+      })
+    })
+    
+  </script>
+</body>
+
+</html>
